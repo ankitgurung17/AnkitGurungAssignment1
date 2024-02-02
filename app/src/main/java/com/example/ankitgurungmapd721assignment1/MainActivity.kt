@@ -65,7 +65,8 @@ private fun Main() {
     }
 
     val studentIDValue = remember {
-        mutableStateOf(TextFieldValue())
+        val defaultStudentID = getId()
+        mutableStateOf(TextFieldValue(text = defaultStudentID))
     }
 
     val store = UserStore(context)
@@ -157,4 +158,8 @@ private fun Main() {
 
     }
 
+}
+private fun getId(): String{
+    val studentID = "301369705"
+    return studentID.takeLast(3)
 }
