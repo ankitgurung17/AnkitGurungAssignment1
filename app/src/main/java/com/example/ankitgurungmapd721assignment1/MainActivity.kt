@@ -127,7 +127,9 @@ private fun Main() {
             Button(
                 onClick = {
                     CoroutineScope(Dispatchers.IO).launch {
-
+                        store.saveUsername(userNameValue.value.text)
+                        store.saveEmail(emailValue.value.text)
+                        store.saveStudentID(studentIDValue.value.text)
                     }
                 }
             ) {
