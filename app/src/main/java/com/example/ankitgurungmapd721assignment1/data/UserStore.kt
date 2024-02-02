@@ -50,4 +50,16 @@ class UserStore (private val context: Context) {
             preferences[STUDENT_ID] = studentID
         }
     }
+
+    suspend fun clearData(){
+        context.dataUsername.edit { preferences ->
+            preferences.remove(USERNAME)
+        }
+        context.dataEmail.edit { preferences ->
+            preferences.remove(EMAIL)
+        }
+        context.dataID.edit { preferences ->
+            preferences.remove(STUDENT_ID)
+        }
+    }
 }
